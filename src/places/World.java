@@ -1,7 +1,8 @@
 package places;
 
-final public class DreamWorld extends Place{
-    private DreamWorld(final Builder builder) {
+public class World extends Place{
+
+    private World(final Builder builder) {
         super(builder);
     }
 
@@ -11,8 +12,8 @@ final public class DreamWorld extends Place{
         }
 
         @Override
-        public DreamWorld build() {
-            return new DreamWorld(this);
+        public World build() {
+            return new World(this);
         }
     }
 }

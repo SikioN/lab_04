@@ -1,8 +1,8 @@
 package entities;
 
 import places.Place;
-import types.CodeColor;
-import types.Color;
+import utilities.CodeColor;
+import utilities.Color;
 
 import java.util.Objects;
 

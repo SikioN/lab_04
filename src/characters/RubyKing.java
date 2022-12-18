@@ -1,10 +1,9 @@
 package characters;
 
-import entities.Entity;
-import myexception.UnsupportedMethod;
+import myexception.FellOutOfTheWorld;
 import phrase.VoiceLines;
 import places.Place;
-import types.CodeColor;
+import utilities.CodeColor;
 
 
 final public class RubyKing extends Character {
@@ -14,35 +13,29 @@ final public class RubyKing extends Character {
 
     @Override
     public String getName() {
-        return CodeColor.RED +super.getName() + CodeColor.NONCOLOR;
+        return CodeColor.RED + super.getName() + CodeColor.NONCOLOR;
     }
 
     @Override
-    public void jump(Place newLocation) throws UnsupportedMethod {
-        throw new UnsupportedMethod();
-    }
-
-    @Override
-    public void watch(Entity entity) throws UnsupportedMethod {
-
-    }
-
-    @Override
-    public void watch(Character character) throws UnsupportedMethod {
-
+    public void walk(Place newLocation) {
+        String message;
+        if (newLocation == null) {
+            throw new FellOutOfTheWorld(this.getName());
+        } else {
+            message = String.format("%s побежал в %s! ", this.getName(), newLocation.getName());
+            this.setLocation(newLocation);
+        }
+        System.out.print(message);
     }
 
 
-    @Override
-    public void walk(Place newLocation) throws UnsupportedMethod {
-        throw new UnsupportedMethod();
+    public void Sparkling() {
+
     }
 
-    @Override
     public String voiceLine() {
-        VoiceLines message =  VoiceLines.randomStyle();
+        VoiceLines message = VoiceLines.randomStyle();
         return "— " + CodeColor.RED + message + CodeColor.NONCOLOR + "\033[3m" + String.format(" — Сказал %s в %s", this.getName(), this.getLocation()) + " \033[0m";
     }
-
 
 }

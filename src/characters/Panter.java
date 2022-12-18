@@ -1,9 +1,7 @@
 package characters;
 
-import entities.Entity;
-import myexception.UnsupportedMethod;
 import places.Place;
-import types.CodeColor;
+import utilities.CodeColor;
 import types.JumpTypes;
 
 
@@ -12,16 +10,13 @@ final public class Panter extends Character {
         super(name, location);
     }
 
-    @Override
-    public void walk(Place newLocation) throws UnsupportedMethod {
-        throw new UnsupportedMethod();
-    }
 
     @Override
     public String getName() {
         return CodeColor.BLACK + super.getName() + CodeColor.NONCOLOR;
     }
 
+    @Override
     public void jump(Place newLocation) {
         String message;
         if (newLocation == null) {
@@ -32,16 +27,5 @@ final public class Panter extends Character {
         }
         System.out.print(message);
     }
-
-    @Override
-    public void watch(Entity entity) throws UnsupportedMethod {
-
-    }
-
-    @Override
-    public void watch(Character character) throws UnsupportedMethod {
-
-    }
-
 
 }

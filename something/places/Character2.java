@@ -1,15 +1,13 @@
 package characters;
 
 import entities.Entity;
-import myexception.FellOutOfTheWorld;
 import myexception.UnsupportedMethod;
 import places.Place;
-import places.Deep;
-import utilities.CheckInformation;
+import places.Void;
 
 import java.util.Objects;
 
-public abstract class Character {
+public abstract class Character2 {
 
     final private String name;
     private Place location;
@@ -23,13 +21,10 @@ public abstract class Character {
             return s;
         };
 
+
+
         this.name = checkName.check(name);
-
-        if (location == null) {
-            throw new FellOutOfTheWorld(this.getName());
-        }
-
-        this.location = location;
+        this.location = Objects.requireNonNullElseGet(location, Void::new);
 
     }
 

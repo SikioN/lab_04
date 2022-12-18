@@ -1,9 +1,8 @@
 package characters;
 
-import entities.Entity;
-import myexception.UnsupportedMethod;
+import myexception.FellOutOfTheWorld;
 import places.Place;
-import types.CodeColor;
+import utilities.CodeColor;
 
 final public class Wizard extends Character {
 
@@ -12,31 +11,16 @@ final public class Wizard extends Character {
     }
 
     @Override
-    public void jump(Place newLocation) throws UnsupportedMethod {
-        throw new UnsupportedMethod();
-    }
-
-    @Override
-    public void watch(Entity entity) throws UnsupportedMethod {
-        throw new UnsupportedMethod();
-    }
-
-    @Override
-    public void watch(Character character) throws UnsupportedMethod {
-        throw new UnsupportedMethod();
-    }
-
-
-    @Override
     public String getName() {
         return CodeColor.VIOLET + super.getName() + CodeColor.NONCOLOR;
     }
 
+    @Override
     public void walk(Place newLocation) {
         String message;
 
         if (newLocation == null) {
-            message = String.format(this.getName() + " остался в %s... ", this.getLocation());
+            throw new FellOutOfTheWorld(this.getName());
         } else {
             message = String.format("А " + this.getName() + " взял путь прямо из %s в %s! ", this.getLocation(), newLocation.getName());
             this.setLocation(newLocation);

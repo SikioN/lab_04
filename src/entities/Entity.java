@@ -7,11 +7,11 @@ import java.util.Objects;
 
 public abstract class Entity {
     final private String name;
-    private Place location;
+    private final Place location;
 
-    public Entity(String name, Place location) throws FellOutOfTheWorld {
+    public Entity(String name, Place location) {
         this.name = Objects.requireNonNullElse(name, "Ничто");
-//        this.location = Objects.requireNonNullElseGet(location, Void::new);
+//        this.location = Objects.requireNonNullElseGet(location, Deep::new);
         if (location == null) {
             throw new FellOutOfTheWorld(name);
         }

@@ -1,15 +1,15 @@
 package characters;
 
 import entities.Entity;
-import myexception.UnsupportedMethod;
+import myexception.CantRemember;
 import places.DreamWorld;
 import places.Place;
-import types.CodeColor;
-import types.Color;
+import utilities.CodeColor;
+import utilities.Color;
 import types.ThinkingType;
 
 
-final public class Muumimamma extends Character implements Remember {
+final public class Muumimamma extends Moomins {
     public Muumimamma(String name, Place location) {
         super(name, location);
     }
@@ -19,34 +19,6 @@ final public class Muumimamma extends Character implements Remember {
         return CodeColor.CYAN + super.getName() + CodeColor.NONCOLOR;
     }
 
-    @Override
-    public void jump(Place newLocation) throws UnsupportedMethod {
-        throw new UnsupportedMethod();
-    }
-
-
-    @Override
-    public void walk(Place newLocation) throws UnsupportedMethod {
-        throw new UnsupportedMethod();
-    }
-
-    @Override
-    public void watch(Character character) {
-        if (this.equals(character)) {
-            this.voiceLine(String.format("Вот %s", character.getName()));
-        } else {
-            this.voiceLine("Ой... здесь ничего нет.");
-        }
-    }
-
-    @Override
-    public void watch(Entity entity) {
-        if (this.getLocation().getClass().equals(entity.getLocation().getClass()) && this.getLocation().getName().equals(entity.getLocation().getName())) {
-            this.voiceLine(String.format("Вот %s", entity.getName()));
-        } else {
-            this.voiceLine("Ой... здесь ничего нет.");
-        }
-    }
 
     @Override
     public String getRemember(String about) {
@@ -57,10 +29,10 @@ final public class Muumimamma extends Character implements Remember {
     }
 
     @Override
-    public void remember() {
-        if (Math.random() >= 0.3) {
+    public void remember() throws CantRemember {
+        if (Math.random() >= 0.6) {
 
-            DreamWorld beach = new DreamWorld("Пляж");
+            DreamWorld beach = new DreamWorld.Builder2("Пляж").build();
             System.out.print(this.getName() + " казалось, что" + CodeColor.GREEN + " отправилась " + CodeColor.NONCOLOR + "на Пляж, ");
             Place oldLocation = this.getLocation();
 
@@ -99,10 +71,9 @@ final public class Muumimamma extends Character implements Remember {
             this.setLocation(oldLocation);
 
         } else {
-            System.out.print(this.getName() + "\u001B[31m" + " ничего " + "\u001B[0m" + "не пришло на ум...");
+
+            throw new CantRemember(this.getName() + CodeColor.RED + " ничего " + CodeColor.NONCOLOR + "не пришло на ум...");
+
         }
-
     }
-
-
 }

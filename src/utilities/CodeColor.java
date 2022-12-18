@@ -1,4 +1,4 @@
-package types;
+package utilities;
 
 public enum CodeColor {
     VIOLET ("\u001B[35m"),
