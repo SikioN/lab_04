@@ -1,6 +1,6 @@
 package places;
 
-public class Castle extends Place {
+final public class Castle extends Place {
 
     private Castle(final Builder builder) {
         super(builder);

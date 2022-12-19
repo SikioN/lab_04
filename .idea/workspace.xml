@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfedeee9-8aff-4b6d-b4b7-d5a243c6b80f" name="Changes" comment="update project to nextGen">
-      <change beforePath="$PROJECT_DIR$/src/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Story.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/characters/Stranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/characters/Stranger.java" afterDir="false" />
+    <list default="true" id="cfedeee9-8aff-4b6d-b4b7-d5a243c6b80f" name="Changes" comment="fix Stranger">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,7 @@
       <workItem from="1671384434194" duration="11509000" />
       <workItem from="1671446111191" duration="18815000" />
       <workItem from="1671468137001" duration="2419000" />
-      <workItem from="1671471919503" duration="533000" />
+      <workItem from="1671471919503" duration="1258000" />
     </task>
     <task id="LOCAL-00001" summary="Extending project">
       <created>1671368293403</created>
@@ -109,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671470037630</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix Stranger">
+      <created>1671472564903</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671472564903</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +125,7 @@
     <MESSAGE value="Extending project" />
     <MESSAGE value="add Builder to Place" />
     <MESSAGE value="update project to nextGen" />
-    <option name="LAST_COMMIT_MESSAGE" value="update project to nextGen" />
+    <MESSAGE value="fix Stranger" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix Stranger" />
   </component>
 </project>

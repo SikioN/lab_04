@@ -1,7 +1,6 @@
 package places;
 
 final public class Deep extends Place {
-
     public Deep(final Builder builder) {
         super(builder);
     }

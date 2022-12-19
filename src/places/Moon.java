@@ -2,9 +2,7 @@ package places;
 
 import types.TimeOfDay;
 
-public class Moon extends Place {
-
-
+final public class Moon extends Place {
     private Moon(final Place.Builder builder) {
         super(builder);
     }
