@@ -3,23 +3,18 @@ package utilities;
 import java.util.Random;
 
 public enum Color {
-//    VIOLET ("Фиолетовый"), /*CsCl*/
-//    BLUE ("Синий"), /*CH3OH*/
-//    YELLOW ("Жёлтый"), /*NaCl*/
-//    GREEN ("Зелёный"), /*CaCl2*/
-//    RED ("Красный");  /*LiCl*/
-    VIOLET ("Фиолетовый"),
-    BLUE ("Синий"),
-    YELLOW ("Жёлтый"),
-    GREEN ("Зелёный"),
-    BLACK ("Чёрный"),
-    CYAN ("Сине-зелёный"),
-    WHITE ("Белый"),
-    RED ("Красный"),
-    BROWN ("Коричневый"),
-    PINK ("Розовый"),
-    RUBIN ("Рубиновый"),
-    ORANGEREDCRAYOLA ("Оранжево-красный Крайола"),
+    VIOLET("Фиолетовый"),
+    BLUE("Синий"),
+    YELLOW("Жёлтый"),
+    GREEN("Зелёный"),
+    BLACK("Чёрный"),
+    CYAN("Сине-зелёный"),
+    WHITE("Белый"),
+    RED("Красный"),
+    BROWN("Коричневый"),
+    PINK("Розовый"),
+    RUBIN("Рубиновый"),
+    ORANGEREDCRAYOLA("Оранжево-красный Крайола"),
     NONCOLOR("Невидимый");
 
     private final String title;

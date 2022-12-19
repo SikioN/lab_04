@@ -1,10 +1,14 @@
-import characters.*;
-import places.*;
 import characters.Character;
-import entities.*;
-import myexception.*;
-import utilities.*;
+import characters.*;
+import entities.Fire;
+import entities.Rubin;
+import entities.Specificity;
+import myexception.CantRemember;
+import myexception.UnsupportedMethod;
 import phrase.VoiceLinesRubyKing;
+import places.*;
+import utilities.CodeColor;
+import utilities.Color;
 
 import java.util.ArrayList;
 

@@ -1,8 +1,8 @@
 package characters;
 
 import places.Place;
-import utilities.CodeColor;
 import types.JumpTypes;
+import utilities.CodeColor;
 
 
 final public class Panter extends Character implements Relaxing {

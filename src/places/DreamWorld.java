@@ -2,7 +2,7 @@ package places;
 
 import types.TimeOfDay;
 
-final public class DreamWorld extends Place{
+final public class DreamWorld extends Place {
     private DreamWorld(final Builder builder) {
         super(builder);
     }

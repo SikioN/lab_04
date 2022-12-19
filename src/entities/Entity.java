@@ -11,7 +11,6 @@ public abstract class Entity {
 
     public Entity(String name, Place location) {
         this.name = Objects.requireNonNullElse(name, "Ничто");
-//        this.location = Objects.requireNonNullElseGet(location, Deep::new);
         if (location == null) {
             throw new FellOutOfTheWorld(name);
         }

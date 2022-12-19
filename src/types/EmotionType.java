@@ -3,10 +3,10 @@ package types;
 import java.util.Random;
 
 public enum EmotionType {
-    SILENTLY ("безмолвно"),
-    ALARMINGLY ("тревожно"),
-    CHEERFULLY ("радостно"),
-    TIREDLY ("уставше");
+    SILENTLY("безмолвно"),
+    ALARMINGLY("тревожно"),
+    CHEERFULLY("радостно"),
+    TIREDLY("уставше");
 
     private final String title;
     private static final Random r;
@@ -26,4 +26,5 @@ public enum EmotionType {
     @Override
     public String toString() {
         return this.title;
-    }}
+    }
+}

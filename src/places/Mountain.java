@@ -1,6 +1,6 @@
 package places;
 
-final public class Mountain extends Place{
+final public class Mountain extends Place {
 
     private Mountain(final Builder builder) {
         super(builder);

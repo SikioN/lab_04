@@ -3,12 +3,12 @@ package types;
 import java.util.Random;
 
 public enum JumpTypes {
-    SOFT ("мягко"),
-    HEAVY ("тяжело"),
-    CLUMSILY ("неуклюже"),
-    TIRED ("уставше"),
-    HIGHER ("высоко"),
-    CAREFULLY ("осторожно");
+    SOFT("мягко"),
+    HEAVY("тяжело"),
+    CLUMSILY("неуклюже"),
+    TIRED("уставше"),
+    HIGHER("высоко"),
+    CAREFULLY("осторожно");
 
     private final String title;
     private static final Random r;

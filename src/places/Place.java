@@ -1,8 +1,8 @@
 package places;
 
 import myexception.CantBeThere;
-import utilities.CheckInformation;
 import types.TimeOfDay;
+import utilities.CheckInformation;
 
 import java.util.Objects;
 
@@ -24,7 +24,6 @@ public abstract class Place {
             this.name = checkName.check(name);
 
             this.size = size;
-
         }
 
         public Builder setTime() {

@@ -37,7 +37,7 @@ final public class Mumintroll extends Moomins {
             Character snusmumriken = new Character("Снусмумрик", worldOfMemories) {
                 @Override
                 public String getName() {
-                    return CodeColor.GREEN +super.getName() + CodeColor.NONCOLOR;
+                    return CodeColor.GREEN + super.getName() + CodeColor.NONCOLOR;
                 }
             };
 
