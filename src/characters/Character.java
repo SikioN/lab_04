@@ -4,7 +4,6 @@ import entities.Entity;
 import myexception.FellOutOfTheWorld;
 import myexception.UnsupportedMethod;
 import places.Place;
-import places.Deep;
 import utilities.CheckInformation;
 
 import java.util.Objects;
@@ -71,15 +70,15 @@ public abstract class Character {
 
     public void voiceLine(String message) {
         if (message == null) {
-            System.out.printf("\n— ... — промолчал %s. ", this.getName());
+            System.out.printf("\n— ... — промолчал %s.\n", this.getName());
         } else {
-            System.out.printf("\n— %s! — сказал %s. ", message, this.getName());
+            System.out.printf("\n— %s! — сказал %s.\n", message, this.getName());
         }
     }
 
     @Override
     public String toString() {
-        return String.format("%s из %s", name, location.getName());
+        return String.format("%s стоит в %s %s.", this.getName(), location.getName(), location.getTime());
     }
 
     @Override

@@ -9,6 +9,10 @@ public enum CodeColor {
     CYAN ("\u001B[36m"),
     WHITE ("\u001B[37m"),
     RED ("\u001B[31m"),
+    BROWN ("\033[38;05;94m"),
+    PINK ("\033[38;05;174m"),
+    RUBIN ("\033[38;05;124m"),
+    ORANGEREDCRAYOLA ("\033[01;38;05;196m"),
     NONCOLOR("\u001B[0m");
 
     private final String title;

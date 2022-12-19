@@ -16,6 +16,10 @@ public enum Color {
     CYAN ("Сине-зелёный"),
     WHITE ("Белый"),
     RED ("Красный"),
+    BROWN ("Коричневый"),
+    PINK ("Розовый"),
+    RUBIN ("Рубиновый"),
+    ORANGEREDCRAYOLA ("Оранжево-красный Крайола"),
     NONCOLOR("Невидимый");
 
     private final String title;

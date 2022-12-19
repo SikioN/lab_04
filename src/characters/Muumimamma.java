@@ -4,9 +4,9 @@ import entities.Entity;
 import myexception.CantRemember;
 import places.DreamWorld;
 import places.Place;
+import types.EmotionType;
 import utilities.CodeColor;
 import utilities.Color;
-import types.ThinkingType;
 
 
 final public class Muumimamma extends Moomins {
@@ -16,7 +16,7 @@ final public class Muumimamma extends Moomins {
 
     @Override
     public String getName() {
-        return CodeColor.CYAN + super.getName() + CodeColor.NONCOLOR;
+        return CodeColor.PINK + super.getName() + CodeColor.NONCOLOR;
     }
 
 
@@ -25,7 +25,7 @@ final public class Muumimamma extends Moomins {
         if (about == null) {
             about = "небытие";
         }
-        return String.format("Думает %s о %s.\n", ThinkingType.randomStyle(), about);
+        return String.format("Думает %s о %s.\n", EmotionType.randomStyle(), about);
     }
 
     @Override

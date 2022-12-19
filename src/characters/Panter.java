@@ -5,11 +5,10 @@ import utilities.CodeColor;
 import types.JumpTypes;
 
 
-final public class Panter extends Character {
+final public class Panter extends Character implements Relaxing {
     public Panter(String name, Place location) {
         super(name, location);
     }
-
 
     @Override
     public String getName() {
@@ -22,10 +21,14 @@ final public class Panter extends Character {
         if (newLocation == null) {
             message = String.format(this.getName() + " не захотела прыгать и осталась в %s.\n", this.getLocation());
         } else {
-            message = String.format(this.getName() + " %s спрыгнула с %s и приземлилась в %s.\n", JumpTypes.randomStyle(), this.getLocation(), newLocation.getName());
+            message = String.format(this.getName() + " %s приземлилась в %s.\n", JumpTypes.randomStyle(), newLocation.getName());
             this.setLocation(newLocation);
         }
         System.out.print(message);
     }
 
+    @Override
+    public void relax() {
+        System.out.printf(", а %s спала.\n", this.getName());
+    }
 }

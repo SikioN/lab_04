@@ -1,7 +1,7 @@
 package characters;
 
+import entities.Entity;
 import myexception.FellOutOfTheWorld;
-import phrase.VoiceLines;
 import places.Place;
 import utilities.CodeColor;
 
@@ -13,7 +13,7 @@ final public class RubyKing extends Character {
 
     @Override
     public String getName() {
-        return CodeColor.RED + super.getName() + CodeColor.NONCOLOR;
+        return CodeColor.RUBIN + super.getName() + CodeColor.NONCOLOR;
     }
 
     @Override
@@ -29,13 +29,14 @@ final public class RubyKing extends Character {
     }
 
 
-    public void Sparkling() {
-
+    public void sparkling(Entity entity) {
+        String message;
+        if (entity == null) {
+            message = String.format("%s ничего не держал...", this.getName());
+        } else {
+            int rate = -1 + (int) (Math.random() * 3);
+            message = String.format("В руках у %s %s сверкал %s.", this.getName(), (rate > 0 ? "сильно" : "слабо"), entity.getName());
+        }
+        System.out.println(message);
     }
-
-    public String voiceLine() {
-        VoiceLines message = VoiceLines.randomStyle();
-        return "— " + CodeColor.RED + message + CodeColor.NONCOLOR + "\033[3m" + String.format(" — Сказал %s в %s", this.getName(), this.getLocation()) + " \033[0m";
-    }
-
 }

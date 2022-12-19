@@ -3,8 +3,8 @@ package characters;
 import myexception.CantRemember;
 import places.DreamWorld;
 import places.Place;
+import types.EmotionType;
 import utilities.CodeColor;
-import types.ThinkingType;
 
 
 final public class Mumintroll extends Moomins {
@@ -22,7 +22,7 @@ final public class Mumintroll extends Moomins {
         if (about == null) {
             about = "небытие";
         }
-        return String.format("Размышляет %s о %s.\n", ThinkingType.randomStyle(), about);
+        return String.format("Размышляет %s о %s.\n", EmotionType.randomStyle(), about);
     }
 
     @Override
@@ -37,7 +37,7 @@ final public class Mumintroll extends Moomins {
             Character snusmumriken = new Character("Снусмумрик", worldOfMemories) {
                 @Override
                 public String getName() {
-                    return super.getName();
+                    return CodeColor.GREEN +super.getName() + CodeColor.NONCOLOR;
                 }
             };
 

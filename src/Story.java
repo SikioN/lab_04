@@ -1,38 +1,82 @@
 import characters.*;
-import entities.Fire;
-import entities.Rubin;
-import myexception.CantRemember;
-import myexception.UnsupportedMethod;
 import places.*;
+import characters.Character;
+import entities.*;
+import myexception.*;
+import utilities.*;
+import phrase.VoiceLinesRubyKing;
 
 import java.util.ArrayList;
 
 public class Story {
     public static void main(String[] args) throws UnsupportedMethod {
+        Moon moon = new Moon.Builder2("Луна").build();
 
-        World world = (World) new World.Builder2("Мир").setTime().build();
+        Wizard wizard = new Wizard("Волшебник", moon);
+        Panter panter = new Panter("Пантера", moon);
+        wizard.relax();
+        panter.relax();
+
+        World world = (World) new World.Builder2("Земля").setTime().build();
         Mumindalen mumindalen = (Mumindalen) new Mumindalen.Builder2("Долина").setLocation(world).build();
-
         Castle castle = (Castle) new Castle.Builder2("Замок").setLocation(mumindalen).build();
+
         RubyKing rubyKing = new RubyKing("Король Рубинов", castle);
-        Rubin rubin = new Rubin("Рубин", mumindalen, rubyKing);
+        Rubin rubin = new Rubin(castle, rubyKing, Color.ORANGEREDCRAYOLA);
+        rubyKing.voiceLine(CodeColor.RUBIN + "" + VoiceLinesRubyKing.randomStyle() + CodeColor.NONCOLOR);
+
+        System.out.println(rubyKing);
+        rubyKing.sparkling(rubin);
+
+        wizard.watch(rubyKing);
         System.out.println(rubin);
+        wizard.realized(rubin);
+        wizard.gotDressed();
+
+        wizard.shakeOut();
+        wizard.saddled(panter);
+
+        final class StarDust extends Fire implements Specificity {
+            public StarDust(String name, Place location) {
+                super(name, location);
+
+            }
+
+            public void settled(Character character) {
+                int rate = -1 + (int) (Math.random() * 3);
+                System.out.printf("%s %s %s.\n\n", this.getName(), (rate > 0 ? "осела на" : "пролетела мимо"), character.getName());
+            }
+        }
+
+        StarDust starDust = new StarDust("Звёздная пыль", moon);
+
+        ArrayList<Character> pair = new ArrayList<>();
+
+        pair.add(wizard);
+        pair.add(panter);
+
+        for (Character c : pair) {
+            if (c == null) {
+                continue;
+            }
+
+            if (c == wizard) {
+                starDust.settled(wizard);
+            } else {
+                c.setLocation(world);
+            }
+
+        }
 
         Fire fire = new Fire("Огонь", castle);
         fire.flaredUp();
 
         Mountain mountain = (Mountain) new Mountain.Builder2("Гора").setLocation(world).build();
-        Mountain peak = (Mountain) new Mountain.Builder2("Верхушка горы").setLocation(mountain).build();
 
-
-        Wizard wizard = new Wizard("Волшебник", mountain);
         wizard.walk(mumindalen);
-
-        Panter panter = new Panter("Пантера", peak);
         panter.jump(mountain);
 
         System.out.printf("Тем временем в %s:\n", mumindalen);
-        System.out.println(rubyKing.voiceLine());
 
         Mumintroll mumintroll = new Mumintroll("", castle);
 
@@ -46,6 +90,7 @@ public class Story {
 
 
         for (Moomins c : residents) {
+            System.out.println();
             if (c == null) {
                 continue;
             }
@@ -65,6 +110,30 @@ public class Story {
             }
         }
 
+
+        for (Moomins c : residents) {
+            System.out.println(c.scared());
+        }
+
+        Stranger mouse = new Stranger(null, Color.WHITE);
+        Stranger cat = new Stranger("Кот", Color.BLACK);
+
+
+        ArrayList<Stranger> strangers = new ArrayList<>();
+        strangers.add(mouse);
+        strangers.add(cat);
+
+        for (Stranger stranger : strangers) {
+            if (stranger == null) {
+                continue;
+            }
+            stranger.walk(castle);
+
+            if (stranger == cat) {
+                System.out.println(stranger.lay());
+            }
+
+        }
 
     }
 }

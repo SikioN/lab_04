@@ -2,7 +2,7 @@ package types;
 
 import java.util.Random;
 
-public enum ThinkingType {
+public enum EmotionType {
     SILENTLY ("безмолвно"),
     ALARMINGLY ("тревожно"),
     CHEERFULLY ("радостно"),
@@ -11,7 +11,7 @@ public enum ThinkingType {
     private final String title;
     private static final Random r;
 
-    ThinkingType(String title) {
+    EmotionType(String title) {
         this.title = title;
     }
 
@@ -19,8 +19,8 @@ public enum ThinkingType {
         r = new Random();
     }
 
-    public static ThinkingType randomStyle() {
-        return values()[r.nextInt(ThinkingType.values().length)];
+    public static EmotionType randomStyle() {
+        return values()[r.nextInt(EmotionType.values().length)];
     }
 
     @Override

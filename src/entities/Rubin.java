@@ -8,14 +8,10 @@ import utilities.Color;
 import java.util.Objects;
 
 public class Rubin extends Entity {
-    private Character owner;
+    private final Character owner;
 
-    public Rubin(String name, Place place, Character owner) {
-        super(CodeColor.RED + "" + Color.RED + " " + name + CodeColor.NONCOLOR, place);
-        this.owner = owner;
-    }
-
-    public void setOwner(Character owner) {
+    public Rubin(Place place, Character owner, Color color) {
+        super(CodeColor.values()[color.ordinal()].getTitle() + "" + color + " " + "Рубин" + CodeColor.NONCOLOR, place);
         this.owner = owner;
     }
 
@@ -25,7 +21,7 @@ public class Rubin extends Entity {
 
     @Override
     public String toString() {
-        return String.format("%s принадлежит %s. ", this.getName(), this.getOwner());
+        return String.format("Самый большой %s находится в %s.", this.getName(), this.getLocation());
     }
 
     @Override

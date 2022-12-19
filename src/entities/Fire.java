@@ -6,7 +6,7 @@ import utilities.Color;
 
 import java.util.Objects;
 
-final public class Fire extends Entity implements Specificity {
+public class Fire extends Entity implements Specificity {
     private final Color specificity;
     private final String code;
 

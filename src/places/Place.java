@@ -1,7 +1,7 @@
 package places;
 
+import myexception.CantBeThere;
 import utilities.CheckInformation;
-import myexception.FellOutOfTheWorld;
 import types.TimeOfDay;
 
 import java.util.Objects;
@@ -12,7 +12,7 @@ public abstract class Place {
         private final String name;
         private final Double size;
         private String location;
-        private String time;
+        String time;
 
         public Builder(String name, Double size) {
             CheckInformation<String> checkName = (String s) -> {
@@ -35,17 +35,8 @@ public abstract class Place {
         public Builder setLocation(Place location) {
 
             CheckInformation<Place> checkLocation = (Place s) -> {
-                if (s == null) {
-
-//                    return new Builder("Бездна") {
-//                        @Override
-//                        public Place build() {
-//                            return new Place(this) {
-//                            };
-//                        }
-//                    }.build();
-
-                    throw new FellOutOfTheWorld(name);
+                if (s == null || this.size > location.getSize() || this.size < 0) {
+                    throw new CantBeThere(String.format("%s не может находится в этом месте", this.name));
                 }
                 return s;
             };
@@ -95,9 +86,9 @@ public abstract class Place {
     @Override
     public String toString() {
         if (location != null) {
-            return String.format("%s в %s", name, location);
+            return String.format("%s в %s", this.name, this.location);
         }
-        return String.format("%s", name);
+        return String.format("%s", this.name);
     }
 
     @Override

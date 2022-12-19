@@ -25,4 +25,9 @@ abstract public class Moomins extends Character implements Remember {
             this.voiceLine("Ой... здесь ничего нет.");
         }
     }
+
+    public String scared() {
+        return this.getName() + " вздрогнул.";
+    }
+
 }

@@ -2,7 +2,7 @@ package phrase;
 
 import java.util.Random;
 
-public enum VoiceLines {
+public enum VoiceLinesRubyKing {
     SILENTLY ("Хммм..."),
     RUBIN ("Нужно больше Рубинов!"),
     ENTHUSIASTICALLY ("Я – король! Король РУБИНОВ!"),
@@ -11,7 +11,7 @@ public enum VoiceLines {
     private final String title;
     private static final Random r;
 
-    VoiceLines(String title) {
+    VoiceLinesRubyKing(String title) {
         this.title = title;
     }
 
@@ -19,8 +19,8 @@ public enum VoiceLines {
         r = new Random();
     }
 
-    public static VoiceLines randomStyle() {
-        return values()[r.nextInt(VoiceLines.values().length)];
+    public static VoiceLinesRubyKing randomStyle() {
+        return values()[r.nextInt(VoiceLinesRubyKing.values().length)];
     }
 
     @Override
