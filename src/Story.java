@@ -119,9 +119,8 @@ public class Story {
             System.out.println(c.scared());
         }
 
-        Stranger mouse = new Stranger(null, Color.WHITE);
+        Stranger mouse = new Stranger("Мышь", Color.WHITE);
         Stranger cat = new Stranger("Кот", Color.BLACK);
-
 
         ArrayList<Stranger> strangers = new ArrayList<>();
         strangers.add(mouse);

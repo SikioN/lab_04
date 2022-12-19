@@ -10,7 +10,11 @@ final public class Stranger extends Character {
 
 
     public Stranger(String name, Color color) {
-        super(CodeColor.values()[color.ordinal()].getTitle() + "" + color + " " + name + CodeColor.NONCOLOR, new Deep.Builder2().build());
+        super((name != null && color != null) ? CodeColor.values()[color.ordinal()].getTitle() + "" + color + " " + name + CodeColor.NONCOLOR
+                : (name == null && color != null) ? CodeColor.values()[color.ordinal()].getTitle() + "" + color + " " + "Незнакомец" + CodeColor.NONCOLOR
+                : (name != null) ? Color.NONCOLOR + " " + name + CodeColor.NONCOLOR
+                : Color.NONCOLOR + " " + "Незнакомец" + CodeColor.NONCOLOR,
+                new Deep.Builder2().build());
     }
 
     @Override
